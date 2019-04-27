@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lilim</string>
+    <string name="register">REGISTRATE</string>
+    <string name="noAccount">No tienes cuenta?</string>
+    <string name="login_text">Iniciar Sesion</string>
+    <string name="password">Contraseña</string>
+    <string name="mail">Correo Electronico</string>
+    <string name="participacion_ciudadana">Participacion Ciudadana</string>
+    <string name="App_icon_description">App icon</string>
+</resources>

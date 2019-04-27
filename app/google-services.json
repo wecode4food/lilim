@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "738898624761",
+    "firebase_url": "https://adan-is-aive.firebaseio.com",
+    "project_id": "adan-is-aive",
+    "storage_bucket": "adan-is-aive.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738898624761:android:7b51f77b1bf0b8bd",
+        "android_client_info": {
+          "package_name": "com.wecode4food.lilim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738898624761-dkrr5kcbnlcputnr2hqkbrsv5akt6vl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACqOurqnOevIaARSJfshVG0QMVsqJaPAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738898624761-dkrr5kcbnlcputnr2hqkbrsv5akt6vl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
