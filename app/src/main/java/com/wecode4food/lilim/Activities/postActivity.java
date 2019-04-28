@@ -24,7 +24,8 @@ public class postActivity extends AppCompatActivity {
 
     ImageView imagesrc;
     TextView titulo,
-            descripcion;
+            descripcion,
+            owner;
     private DatabaseReference posts;
     String key;
 
@@ -41,6 +42,7 @@ public class postActivity extends AppCompatActivity {
         imagesrc = findViewById(R.id.imagesrc);
         titulo = findViewById(R.id.titulo);
         descripcion = findViewById(R.id.descripcion);
+        owner = findViewById(R.id.owner);
         posts = FirebaseDatabase.getInstance().getReference("post");
     }
 
@@ -68,6 +70,7 @@ public class postActivity extends AppCompatActivity {
     private void filldata(Post post){
         titulo.setText(post.getTitulo());
         descripcion.setText(post.getDescripcion());
+        owner.setText("Autor: "+post.getOwner());
         Glide.with(getBaseContext())
                 .load(post.getSrc())
                 .into(imagesrc);
