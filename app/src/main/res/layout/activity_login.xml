@@ -32,7 +32,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/email_layout"
-        android:layout_width="280dp"
+        android:layout_width="@dimen/layoutSize"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
@@ -51,7 +51,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="280dp"
+        android:layout_width="@dimen/layoutSize"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -77,7 +77,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="280dp"
+        android:layout_width="@dimen/layoutSize"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -86,13 +86,30 @@
         android:text="@string/login_text"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintVertical_bias="0.048"
-        android:textColor="@color/ColorWhite"
-        android:onClick="signIn"
+        app:layout_constraintVertical_bias="0.05"
+        android:textColor="@color/colorWhite"
+        android:onClick="login"
         android:background="@drawable/style_button"/>
+
+    <Button
+        android:id="@+id/guest"
+        android:layout_width="@dimen/layoutSize"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/guest_text"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.05"
+        android:textColor="@color/colorBlack"
+        android:onClick="guestLogin"
+        android:background="@drawable/style_button_white"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -117,7 +134,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/register"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:onClick="register"/>
     </LinearLayout>
 
 

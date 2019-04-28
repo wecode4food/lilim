@@ -20,7 +20,9 @@ public class loginActivity extends AppCompatActivity {
     EditText email,
             password;
     private FirebaseAuth mAuth;
-    private Intent HomeActivity;
+    //intent initialization
+    private Intent homeActivity;
+    private Intent registerActivity;
     private ConstraintLayout cl;
 
     @Override
@@ -34,18 +36,20 @@ public class loginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
-        HomeActivity = new Intent(this, homeActivity.class);
+        homeActivity = new Intent(this, homeActivity.class);
+        registerActivity = new Intent(this,registerActivity.class);
         cl = findViewById(R.id.cl);
     }
 
-    public void signIn(View view) {
+    public void login(View view) {
         hideKeyboard();
         if(!email.getText().toString().trim().equals("") && !password.getText().equals("")){
             mAuth.signInWithEmailAndPassword(email.getText().toString(), password.toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        startActivity(HomeActivity);
+                        startActivity(homeActivity);
+                        finish();
                     } else {
                         showMessage(task.getException().getMessage());
                     }
@@ -54,6 +58,15 @@ public class loginActivity extends AppCompatActivity {
         }else{
             showMessage("Por favor llena ambos campos antes de continuar");
         }
+    }
+    public  void guestLogin(View view) {
+        showMessage("Entrando como invitado");
+        startActivity(homeActivity);
+        finish();
+    }
+    public void register(View view){
+        startActivity(registerActivity);
+        finish();
     }
 
     //Miscellaneous Functions

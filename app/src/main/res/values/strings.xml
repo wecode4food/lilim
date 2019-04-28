@@ -3,8 +3,10 @@
     <string name="register">REGISTRATE</string>
     <string name="noAccount">No tienes cuenta?</string>
     <string name="login_text">Iniciar Sesion</string>
-    <string name="password">Contraseña</string>
+    <string name="password">Contraseña(6 digitos)</string>
     <string name="mail">Correo Electronico</string>
     <string name="participacion_ciudadana">Participacion Ciudadana</string>
     <string name="App_icon_description">App icon</string>
+    <string name="guest_text">Iniciar Como Invitado</string>
+    <string name="password_confirm">Confirmar Contraseña(6 digitos)</string>
 </resources>

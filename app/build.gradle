@@ -36,5 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:16.1.0'
     //firestore
     implementation 'com.google.firebase:firebase-firestore:18.2.0'
+    //realtime database
+    implementation 'com.google.firebase:firebase-database:16.1.0'
 }
 apply plugin: 'com.google.gms.google-services'
