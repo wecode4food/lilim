@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="corner_min">8dp</dimen>
+    <dimen name="corner_med">16dp</dimen>
     <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_min">8dp</dimen>
+    <dimen name="margin_nano">4dp</dimen>
     <dimen name="layoutSize">280dp</dimen>
 </resources>

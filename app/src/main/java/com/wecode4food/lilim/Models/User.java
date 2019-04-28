@@ -1,4 +1,4 @@
-package Models;
+package com.wecode4food.lilim.Models;
 
 public class User
 {

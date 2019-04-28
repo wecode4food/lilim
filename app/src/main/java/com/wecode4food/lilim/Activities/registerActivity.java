@@ -1,4 +1,4 @@
-package com.wecode4food.lilim;
+package com.wecode4food.lilim.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,9 +21,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import Models.User;
+import com.wecode4food.lilim.Models.User;
+import com.wecode4food.lilim.R;
 
 public class registerActivity extends AppCompatActivity {
     ConstraintLayout cl;
@@ -34,7 +34,6 @@ public class registerActivity extends AppCompatActivity {
              cPassword;
     private User user;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
     DatabaseReference usuarios;
     Intent homeActivity;
 
@@ -54,9 +53,8 @@ public class registerActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         cPassword = findViewById(R.id.cPassword);
         mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
         usuarios = FirebaseDatabase.getInstance().getReference("usuarios");
-        homeActivity = new Intent(this, com.wecode4food.lilim.homeActivity.class);
+        homeActivity = new Intent(this, com.wecode4food.lilim.Activities.homeActivity.class);
 
     }
 
@@ -84,8 +82,8 @@ public class registerActivity extends AppCompatActivity {
                                 if (task.isSuccessful()){
                                     showMessage("Registro realizado Correctamente");
                                     usuarios.child(mAuth.getUid()).setValue(user);
-                                    //startActivity(homeActivity);
-                                    //finish();
+                                    startActivity(homeActivity);
+                                    finish();
                                 }else {
                                     showMessage(task.getException()+"");
                                     Log.i("Error in mAuth ",task.getException()+"");

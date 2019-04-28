@@ -9,4 +9,7 @@
     <string name="App_icon_description">App icon</string>
     <string name="guest_text">Iniciar Como Invitado</string>
     <string name="password_confirm">Confirmar Contraseña(6 digitos)</string>
+    <string name="descrition">Descripcion generica para views de prueba</string>
+    <string name="challenge_description">Imagen del reto a mostrar</string>
+    <string name="comment_description">Icono de mensajes</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.wecode4food.lilim;
+package com.wecode4food.lilim.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,27 +15,44 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.wecode4food.lilim.R;
 
 public class loginActivity extends AppCompatActivity {
     EditText email,
             password;
+    //Firebase auth modules init
+    private FirebaseUser user;
     private FirebaseAuth mAuth;
     //intent initialization
     private Intent homeActivity;
     private Intent registerActivity;
+    //layout initialization
     private ConstraintLayout cl;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        init();
+        if (user != null) {
+            //the User is already logged
+            startActivity(homeActivity);
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        init();
     }
 
     private void init(){
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
-        mAuth = FirebaseAuth.getInstance();
+        //mAuth = FirebaseAuth.getInstance();
         homeActivity = new Intent(this, homeActivity.class);
         registerActivity = new Intent(this,registerActivity.class);
         cl = findViewById(R.id.cl);
