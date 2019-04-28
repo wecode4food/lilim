@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.wecode4food.lilim.Adapters.Adapter;
+import com.wecode4food.lilim.Adapters.ChallengeAdapter;
 import com.wecode4food.lilim.Models.Reto;
 import com.wecode4food.lilim.R;
 
@@ -67,8 +67,8 @@ public class homeActivity extends AppCompatActivity {
     }
 
     private void recyclerViewInit(){
-        Adapter adapterRV =new Adapter(this,retosList);
-        recyclerView.setAdapter(adapterRV);
+        ChallengeAdapter challengeAdapterRV =new ChallengeAdapter(this,retosList);
+        recyclerView.setAdapter(challengeAdapterRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 

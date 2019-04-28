@@ -1,7 +1,7 @@
 package com.wecode4food.lilim.Adapters;
 
 import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,11 +14,11 @@ import com.wecode4food.lilim.Models.Reto;
 import com.wecode4food.lilim.R;
 import java.util.List;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
+public class ChallengeAdapter extends RecyclerView.Adapter<ChallengeAdapter.myViewHolder> {
     private Context mContext;
     private List<Reto> mData;
 
-    public Adapter(Context mContext, List<Reto> mData) {
+    public ChallengeAdapter(Context mContext, List<Reto> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -32,12 +32,20 @@ public class Adapter extends RecyclerView.Adapter<Adapter.myViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, int position) {
+    public void onBindViewHolder(@NonNull myViewHolder myViewHolder, final int position) {
         Glide.with(mContext)
                 .load(mData.get(position).getSrchelp())
                 .into(myViewHolder.background_img);
         //myViewHolder.background_img.setImageURI(Uri.parse(mData.get(position).getSrchelp()));
         myViewHolder.tv_tittle.setText(mData.get(position).getTitulo());
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent challengeActivity = new Intent(mContext, com.wecode4food.lilim.Activities.challengeActivity.class);
+                challengeActivity.putExtra("key",mData.get(position).getKey());
+                mContext.startActivity(challengeActivity);
+            }
+        });
 
     }
 
